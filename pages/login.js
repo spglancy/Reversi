@@ -10,12 +10,13 @@ class HomeScreen extends Component {
       Player2Color: ""
     }
   }
+  static navigationOptions = { header: null }
 
   render() {
     const navigate = this.props.navigation.navigate
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>REVERSI</Text>
+        <Text style={styles.title}>Login</Text>
         <TouchableOpacity
           style={styles.playButton}
           onPress={() => navigate("GameScreen")}
@@ -47,8 +48,7 @@ const styles = StyleSheet.create({
 
   title: {
     fontFamily: "Roboto",
-    fontSize: 48,
-    letterSpacing: 5
+    fontSize: 48
   },
 
   playButton: {
