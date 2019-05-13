@@ -10,18 +10,29 @@ import Signup from "./pages/signup"
 import GameScreen from "./pages/GameScreen"
 import HomeScreen from "./pages/Home"
 import Settings from "./pages/settings"
-import SelectGame from "./pages/selectGame"
+// import SelectGame from "./pages/selectGame"
 
-const gameNavigator = createStackNavigator({
-  // GameType: { screen: SelectGame },
-  GameScreen: { screen: GameScreen }
-})
-
-const MainNavigator = createStackNavigator(
+const gameNavigator = createStackNavigator(
   {
-    Home: HomeScreen,
-    Settings: Settings,
-    Game: gameNavigator
+    // GameType: { screen: SelectGame },
+    GameScreen: { screen: GameScreen }
+  },
+  {
+    initialRouteName: "GameScreen",
+    defaultNavigationOptions: {
+      header: null
+    }
+  }
+)
+
+const DrawerNav = createDrawerNavigator(
+  {
+    Home: { screen: HomeScreen },
+    Play: { screen: gameNavigator },
+    "Log in": { screen: Login },
+    "How To Play": { screen: HowToPlay },
+    "Sign Up": { screen: Signup },
+    Settings: { screen: Settings }
   },
   {
     initialRouteName: "Home",
@@ -30,13 +41,6 @@ const MainNavigator = createStackNavigator(
     }
   }
 )
-
-const DrawerNav = createDrawerNavigator({
-  Home: { screen: MainNavigator },
-  "Log in": { screen: Login },
-  "How To Play": { screen: HowToPlay },
-  "Sign Up": { screen: Signup }
-})
 
 const App = createAppContainer(DrawerNav)
 

@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Text, View, StyleSheet, TouchableOpacity } from "react-native"
+import { Text, View, StyleSheet, TouchableOpacity, Image } from "react-native"
 
 class HomeScreen extends Component {
   constructor(props) {
@@ -15,10 +15,27 @@ class HomeScreen extends Component {
     const navigate = this.props.navigation.navigate
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>REVERSI</Text>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center"
+          }}
+        >
+          <TouchableOpacity
+            style={{ width: 52, height: 52, position: "absolute", left: -55 }}
+            onPress={() => this.props.navigation.openDrawer()}
+          >
+            <Image
+              style={{ width: 52, height: 52 }}
+              source={require("../assets/burger.png")}
+            />
+          </TouchableOpacity>
+          <Text style={styles.title}>REVERSI</Text>
+        </View>
         <TouchableOpacity
           style={styles.playButton}
-          onPress={() => navigate("GameScreen")}
+          onPress={() => navigate("Play")}
         >
           <Text style={{ fontSize: 36, color: "white" }}> Play </Text>
         </TouchableOpacity>
