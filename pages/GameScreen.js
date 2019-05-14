@@ -24,7 +24,7 @@ class GameScreen extends Component {
         [null, null, null, null, null, null, null, null]
       ],
       turn: 1,
-      p1Score: 60,
+      p1Score: 2,
       p2Score: 2,
       P1Color: "black",
       P2Color: "white",

@@ -1,15 +1,16 @@
 import React, { Component } from "react"
-import { Text, View, StyleSheet } from "react-native"
+import { Text, View, StyleSheet, TouchableOpacity } from "react-native"
 
-class Settings extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
+class SelectGame extends Component {
+  static navigationOptions = { header: null }
 
   render() {
-    return blerg
+    return (
+      <Text style={{ position: "absolute", top: 300, left: 150 }}>
+        in progress
+      </Text>
+    )
   }
 }
 
-export default Settings
+export default SelectGame

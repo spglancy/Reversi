@@ -8,7 +8,11 @@ class Settings extends Component {
   }
 
   render() {
-    return blerg
+    return (
+      <Text style={{ position: "absolute", top: 300, left: 150 }}>
+        in progress
+      </Text>
+    )
   }
 }
 

@@ -23,7 +23,7 @@ class HomeScreen extends Component {
           }}
         >
           <TouchableOpacity
-            style={{ width: 52, height: 52, position: "absolute", left: -55 }}
+            style={{ width: 52, height: 52, position: "absolute", left: -65 }}
             onPress={() => this.props.navigation.openDrawer()}
           >
             <Image
